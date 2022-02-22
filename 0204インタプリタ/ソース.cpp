@@ -89,7 +89,7 @@ int main()
 				{
 					print();
 				}
-				//
+				
 				//繰り返しで増分
 				if (strcmp(source[i].input, case6) == 0)
 				{
@@ -105,6 +105,11 @@ int main()
 						}
 						else
 						{
+							if (flgnum != source[i].s1[k])
+							{
+								printf("変数を作ってください。\n");
+								exit(1);
+							}
 							k++;
 						}
 					}
@@ -114,15 +119,22 @@ int main()
 				if (strcmp(source[i].input, case7) == 0)
 				{
 					int atai2;
+					k = 0;
 					while (source[i].s1[k] != NULL)
 					{
 						if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
 						{
 							atai2 = atoi(&source[i].s1[k]);
 							variable -= atai2;
+							k++;
 						}
 						else
 						{
+							if (flgnum != source[i].s1[k])
+							{
+								printf("変数を作ってください。\n");
+								exit(1);
+							}
 							k++;
 						}
 					}
@@ -233,34 +245,36 @@ int main()
 							w = i;
 							if (variable < value)
 							{
-								//条件分岐画面表示 
-								if (strcmp(source[i].input, case1) == 0)
+								while (variable < value)
 								{
-									print();
-									i++;
-								}
-								//増分
-								if (strcmp(source[i].input, case6) == 0)
-								{
-									k = 0;
-									int atai1;
-									while (source[i].s1[k] != NULL)
+									//条件分岐画面表示 
+									if (strcmp(source[i].input, case1) == 0)
 									{
-										if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
-										{
-											atai1 = atoi(&source[i].s1[k]);
-											variable += atai1;
-											k++;
-										}
-										else
-										{
-											k++;
-										}
+										print();
+										i++;
 									}
-									w2 = i;
-									i = w;
+									//増分
+									if (strcmp(source[i].input, case6) == 0)
+									{
+										k = 0;
+										int atai1;
+										while (source[i].s1[k] != NULL)
+										{
+											if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
+											{
+												atai1 = atoi(&source[i].s1[k]);
+												variable += atai1;
+												k++;
+											}
+											else
+											{
+												k++;
+											}
+										}
+										w2 = i;
+										i = w;
+									}
 								}
-
 							}
 							else
 							{
@@ -278,34 +292,36 @@ int main()
 							w = i;
 							if (variable <= value)
 							{
-								//条件分岐画面表示
-								if (strcmp(source[i].input, case1) == 0)
+								while (variable <= value)
 								{
-									print();
-									i++;
-								}
-								//増分
-								if (strcmp(source[i].input, case6) == 0)
-								{
-									k = 0;
-									int atai1;
-									while (source[i].s1[k] != NULL)
+									//条件分岐画面表示
+									if (strcmp(source[i].input, case1) == 0)
 									{
-										if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
-										{
-											atai1 = atoi(&source[i].s1[k]);
-											variable += atai1;
-											k++;
-										}
-										else
-										{
-											k++;
-										}
+										print();
+										i++;
 									}
-									w2 = i;
-									i = w;
+									//増分
+									if (strcmp(source[i].input, case6) == 0)
+									{
+										k = 0;
+										int atai1;
+										while (source[i].s1[k] != NULL)
+										{
+											if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
+											{
+												atai1 = atoi(&source[i].s1[k]);
+												variable += atai1;
+												k++;
+											}
+											else
+											{
+												k++;
+											}
+										}
+										w2 = i;
+										i = w;
+									}
 								}
-
 							}
 							else
 							{
@@ -323,34 +339,36 @@ int main()
 							w = i;
 							if (variable > value)
 							{
-								//条件分岐画面表示 
-								if (strcmp(source[i].input, case1) == 0)
+								while (variable > value)
 								{
-									print();
-									i++;
-								}
-								//減分
-								if (strcmp(source[i].input, case7) == 0)
-								{
-									k = 0;
-									int atai1;
-									while (source[i].s1[k] != NULL)
+									//条件分岐画面表示 
+									if (strcmp(source[i].input, case1) == 0)
 									{
-										if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
-										{
-											atai1 = atoi(&source[i].s1[k]);
-											variable -= atai1;
-											k++;
-										}
-										else
-										{
-											k++;
-										}
+										print();
+										i++;
 									}
-									w2 = i;
-									i = w;
+									//減分
+									if (strcmp(source[i].input, case7) == 0)
+									{
+										k = 0;
+										int atai1;
+										while (source[i].s1[k] != NULL)
+										{
+											if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
+											{
+												atai1 = atoi(&source[i].s1[k]);
+												variable -= atai1;
+												k++;
+											}
+											else
+											{
+												k++;
+											}
+										}
+										w2 = i;
+										i = w;
+									}
 								}
-
 							}
 							else
 							{
@@ -368,32 +386,35 @@ int main()
 							w = i;
 							if (variable >= value)
 							{
-								//条件分岐画面表示
-								if (strcmp(source[i].input, case1) == 0)
+								while (variable >= value)
 								{
-									print();
-									i++;
-								}
-								//減分
-								if (strcmp(source[i].input, case7) == 0)
-								{
-									k = 0;
-									int atai1;
-									while (source[i].s1[k] != NULL)
+									//条件分岐画面表示
+									if (strcmp(source[i].input, case1) == 0)
 									{
-										if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
-										{
-											atai1 = atoi(&source[i].s1[k]);
-											variable -= atai1;
-											k++;
-										}
-										else
-										{
-											k++;
-										}
+										print();
+										i++;
 									}
-									w2 = i;
-									i = w;
+									//減分
+									if (strcmp(source[i].input, case7) == 0)
+									{
+										k = 0;
+										int atai1;
+										while (source[i].s1[k] != NULL)
+										{
+											if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
+											{
+												atai1 = atoi(&source[i].s1[k]);
+												variable -= atai1;
+												k++;
+											}
+											else
+											{
+												k++;
+											}
+										}
+										w2 = i;
+										i = w;
+									}
 								}
 							}
 							else
@@ -477,6 +498,7 @@ int main()
 		if (strcmp(source[i].input, case6) == 0)
 		{
 			int atai1;
+			k = 0;
 			while (source[i].s1[k]!=NULL)
 			{
 				if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
@@ -502,15 +524,23 @@ int main()
 		if (strcmp(source[i].input, case7) == 0)
 		{
 			int atai2;
+			k = 0;
 			while (source[i].s1[k] != NULL)
 			{
 				if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
 				{
 					atai2 = atoi(&source[i].s1[k]);
 					variable -= atai2;
+					k++;
+					i++;
 				}
 				else
 				{
+					if (flgnum != source[i].s1[k])
+					{
+						printf("変数を作ってください。\n");
+						exit(1);
+					}
 					k++;
 				}
 			}
