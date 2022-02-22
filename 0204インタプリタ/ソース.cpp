@@ -89,7 +89,7 @@ int main()
 				{
 					print();
 				}
-
+				//
 				//ŒJ‚è•Ô‚µ‚Å‘•ª
 				if (strcmp(source[i].input, case6) == 0)
 				{
