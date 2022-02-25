@@ -45,12 +45,14 @@ int main()
 	char case2[] = "繰り返し";
 	char case3[] = "四則演算";
 	char case4[] = "変数作り";
-	char case5[] = "条件分岐";
+	char case5[] = "条件繰り返し";
 	char case6[] = "増分";
 	char case7[] = "減分";
 	char case8[] = "プログラム終了";
+	char case9[] = "条件分岐";
+	char case10[] = "そのほか";
 	//ファイルオープン
-	fp = fopen("C:\\Users\\user\\Desktop\\0128プログラミング技法\\0204インタプリタ\\ソースコード入力.txt", "r");
+	fp = fopen("C:\\Users\\user\\Desktop\\0128プログラミング技法\\0204インタプリタ - コピーソースコード入力.txt", "r");
 	if (fp == NULL) return 1;
 	while (true)
 	{
@@ -222,7 +224,7 @@ int main()
 			i++;
 		}
 
-		//条件分岐
+		//条件繰り返し
 		if (strcmp(source[i].input, case5) == 0)
 		{
 			char a;
@@ -550,6 +552,31 @@ int main()
 		if (strcmp(source[i].input, case8) == 0)
 		{
 			exit(0);
+		}
+
+		//条件分岐
+		if (strcmp(source[i].input, case9) == 0)
+		{
+			k = 0;
+			char a;
+			while (source[i].s1[k] != NULL)
+			{
+				if (('9'>=source[i].s1[k])&&(source[i].s1[k]>='0'))
+				{
+
+				}
+				else
+				{
+					a = source[i].s1[k];
+					switch (a)
+					{
+					case'=':
+
+					default:
+						break;
+					}
+				}
+			}
 		}
 	}
 }
