@@ -49,6 +49,9 @@ int main()
 	char case6[] = "増分";
 	char case7[] = "減分";
 	char case8[] = "プログラム終了";
+	char case9[] = "条件分岐";
+	char case10[] = "そのほか";
+
 	//ファイルオープン
 	fp = fopen("C:\\Users\\user\\Desktop\\0128プログラミング技法\\0204インタプリタ\\ソースコード入力.txt", "r");
 	if (fp == NULL) return 1;
@@ -551,6 +554,54 @@ int main()
 		{
 			exit(0);
 		}
+
+		//条件分岐
+		if (strcmp(source[i].input, case9) == 0)
+		{
+			k = 0;
+			char a;
+			int value2 = 0;
+			while (source[i].s1[k] != NULL)
+			{
+				if (!(('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0')))
+				{
+					a = source[i].s1[k];
+					k++;
+					switch (a)
+					{
+					case'<':
+						if (('9' >= source[i].s1[k]) && (source[i].s1[k] >= '0'))
+						{
+							value2 = source[i].s1[k];
+							if (variable < value2)
+							{
+								i++;
+								if (strcmp(source[i].input, case1) == 0);
+								{
+									print();
+								}
+							}
+							else
+							{
+								while (!(strcmp(source[i].input, case10) == 0))
+								{
+									i++;
+								}
+								i++;
+								if (strcmp(source[i].input, case1) == 0);
+								{
+									print();
+								}
+							}
+						}
+
+					default:
+						break;
+					}
+				}
+			}
+		}
+
 	}
 }
 
