@@ -45,7 +45,7 @@ int main()
 	char case2[] = "ŒJ‚è•Ô‚µ";
 	char case3[] = "l‘¥‰‰Z";
 	char case4[] = "•Ï”ì‚è";
-	char case5[] = "ğŒ•ªŠò";
+	char case5[] = "ğŒŒJ‚è•Ô‚µ";
 	char case6[] = "‘•ª";
 	char case7[] = "Œ¸•ª";
 	char case8[] = "ƒvƒƒOƒ‰ƒ€I—¹";
@@ -222,7 +222,7 @@ int main()
 			i++;
 		}
 
-		//ğŒ•ªŠò
+		//ğŒŒJ‚è•Ô‚µ
 		if (strcmp(source[i].input, case5) == 0)
 		{
 			char a;
